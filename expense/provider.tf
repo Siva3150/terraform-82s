@@ -6,7 +6,17 @@ terraform {
 
       }
     }
+
+      backend "s3" {
+    bucket = "82s-remote-state-siva"
+    key    = "for-each-demo"
+    region = "us-east-1"
+    dynamodb_table = "82s-locking"
+  }
 }
+
+
+ 
 
 provider aws {
     region = "us-east-1"
